@@ -55,6 +55,46 @@ section .main-body{
 }
 
 
+/* Responsive gallery for travel images */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.6rem;
+    align-items: start;
+}
+.gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f8f9fa;
+    display: block;
+}
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+@media (min-width: 1200px) {
+    .gallery img { height: 220px; }
+}
+@media (max-width: 480px) {
+    .gallery img { height: 140px; }
+}
+
+/* Utility to keep original aspect without cropping when desired */
+.gallery img.contain {
+    object-fit: contain;
+    background: #fff;
+}
+
+/* Caption below image */
+.gallery figcaption {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
 .bg-gradient-primary-to-secondary-light {
     background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
 }
