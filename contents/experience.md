@@ -8,4 +8,5 @@
 ·Addressed class imbalance and fine-grained recognition limitations by developing vertebra and musculoskeletal disease detection models as well as vertebra detection and hand-foot segmentation models, enhancing the overall performance of the multimodal LLM
 
 ### **Algorithms Engineer**  
-**March 2026 – June 2026 | quiktek Co., Ltd.**  
+**March 2026 – June 2026 | Quiktech Co., Ltd.**  
+
