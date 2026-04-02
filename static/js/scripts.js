@@ -60,4 +60,50 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
+    // Lightbox for travel images
+    const lightbox = document.getElementById('image-lightbox');
+    if (lightbox) {
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            if (lightboxImage) {
+                lightboxImage.src = '';
+                lightboxImage.alt = '';
+            }
+            document.body.classList.remove('lightbox-open');
+        };
+
+        document.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target instanceof HTMLImageElement && target.closest('.gallery')) {
+                if (lightboxImage) {
+                    lightboxImage.src = target.src;
+                    lightboxImage.alt = target.alt || 'Travel photo';
+                }
+                lightbox.classList.add('is-active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('lightbox-open');
+            }
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        if (closeButton) {
+            closeButton.addEventListener('click', closeLightbox);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-active')) {
+                closeLightbox();
+            }
+        });
+    }
+
 }); 

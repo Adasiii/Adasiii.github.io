@@ -61,6 +61,11 @@ Haozhuo now lives in.
 	</figure>
 </div>
 
+### Europe
+
+#### France
+*coming soon*
+
 ---
 
 *Continuously updated... Exploring more of the world*
